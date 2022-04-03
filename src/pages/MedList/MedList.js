@@ -23,7 +23,7 @@ class MedList extends React.Component {
 
             this.setState({ isLoading: false })
             // use it to get userInfor/medList
-            axios.get(`${apiBaseUrl}`)
+            // axios.get(`${apiBaseUrl}`)
             // unfinished here!!!
         }
     }
