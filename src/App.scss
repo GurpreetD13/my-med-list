@@ -1,1 +1,99 @@
+@use './styles/partials/mixins'as *;
+@use './styles/partials/typography'as *;
+@use './styles/partials/colors'as *;
 
+
+
+
+html {
+    font-size: $root-font-size;
+}
+
+// ************************************************
+
+body {
+    margin: 0;
+    font-family: $font-stack;
+    color: $color-primary-black;
+}
+
+// ************************************************
+
+a {
+    text-decoration: none;
+    color: $color-primary-black;
+}
+
+// ************************************************
+
+
+li {
+    list-style-type: none;
+}
+
+// ************************************************
+
+button {
+    @include font-labels-buttons;
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+
+
+    @include tablet {
+        width: 150px;
+        padding: 0 32px;
+
+        &:hover {
+            background-color: $color-secondary-darkblue;
+        }
+    }
+}
+
+// ************************************************
+
+input,
+textarea {
+    @include font-body;
+    font-family: $font-stack;
+    color: $color-primary-black;
+    min-height: 36px;
+    min-width: 240px;
+    max-width: 100%;
+    border-radius: 4px;
+    border: 1px solid $color-secondary-mercury;
+    background-color: $color-secondary-alabaster;
+    padding: 0 12px;
+
+    @include tablet {
+        min-height: 40px;
+        padding: 0 16px;
+    }
+
+    &:focus {
+        outline: none;
+        border: 1px solid $color-primary-blue;
+    }
+
+    &--error {
+        border-color: #D22D2D;
+    }
+}
+
+// ************************************************
+
+textarea {
+    resize: none;
+    min-width: 205px;
+}
+
+// ************************************************
+
+label {
+    color: $color-primary-silver;
+    @include font-labels-buttons;
+    padding-bottom: 4px;
+}
