@@ -4,7 +4,7 @@ import './App.scss';
 function App() {
     return (
             <header className="App-header">
-
+                <h1>My Meds List!</h1>
             </header>
     );
 }
