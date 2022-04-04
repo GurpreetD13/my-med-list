@@ -18,23 +18,27 @@ class MedList extends React.Component {
         if (!token) {
             this.props.history.push('/login')
         } else {
+            // 3. use token to get userInfo and set it to state
+            axios.get(`${apiBaseUrl}/users/current`, { headers: { authorization: `Bearer ${token}` } })
+                .then(res => {
 
-
-
-            this.setState({ isLoading: false })
-            // use it to get userInfor/medList
-            // axios.get(`${apiBaseUrl}`)
-            // unfinished here!!!
+                    this.setState({
+                        userInfo: res.data,
+                        isLoading: false
+                    })
+                })
+                .catch(err => console.log(err));
         }
-    }
+    };
+
 
     render() {
         const { isLoading, userInfo } = this.state;
 
         return (isLoading ? <h1>Loading</h1> :
 
-            <h1>Welcome {userInfo.name}</h1>
-            // pass userInfo id as prop here
+            <h1>{userInfo.name}'s Med List</h1>
+            // 4. use/pass userInfo.id as prop here
         );
     }
 };
