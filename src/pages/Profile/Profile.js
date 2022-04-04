@@ -58,7 +58,7 @@ class Profile extends React.Component {
                     </header>
 
                     {/* Pass user's med list to MedList component as a prop */}
-                    <MedList userMedList={userMedList} />
+                    {userMedList && <MedList userMedList={userMedList} />}
 
                 </div>
             </main>

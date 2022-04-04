@@ -18,7 +18,7 @@ const App = () => {
                 <Route path='/login' component={Login} />
                 <Route path='/signup' component={Signup} />
                 <Route path='/medications/add' component={AddMedication} />
-                <Route path='/medications/update' component={UpdateInstructions} />
+                <Route path='/medications/:medicationId/update' component={UpdateInstructions} />
             </Switch>
         </BrowserRouter>
     );
