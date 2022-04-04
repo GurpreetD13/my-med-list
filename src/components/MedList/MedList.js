@@ -1,9 +1,15 @@
 import './MedList.scss';
 
-const MedList = () => {
+const MedList = (props) => {
+
+    const userMedList = props;
 
     return(
         <h1>MedList</h1>
+
+
+
+        
     );
 };
 

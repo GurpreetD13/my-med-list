@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
-import MedList from './pages/MedList/MedList';
+import Profile from './pages/Profile/Profile';
 import AddMedication from './pages/AddMedication/AddMedication';
 import UpdateInstructions from './pages/UpdateInstructions/UpdateInstructions';
 
@@ -14,7 +14,7 @@ const App = () => {
         <BrowserRouter >
             <Nav />
             <Switch>
-                <Route path='/' exact component={MedList} />
+                <Route path='/' exact component={Profile} />
                 <Route path='/login' component={Login} />
                 <Route path='/signup' component={Signup} />
                 <Route path='/medications/add' component={AddMedication} />
