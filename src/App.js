@@ -17,8 +17,9 @@ const App = () => {
                 <Route path='/' exact component={Profile} />
                 <Route path='/login' component={Login} />
                 <Route path='/signup' component={Signup} />
-                <Route path='/medications/add' component={AddMedication} />
-                <Route path='/medications/:medicationId/update' component={UpdateInstructions} />
+                {/* <Route path='/medications/add' component={AddMedication} />
+                <Route path='/medications/:medicationId/update' component={UpdateInstructions} /> */}
+                {/* Protect routes */}
             </Switch>
         </BrowserRouter>
     );

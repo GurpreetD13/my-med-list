@@ -1,8 +1,8 @@
-// TODO update the urls to match your deployed heroku app and local development port
+// Automatically updates the urls to match deployed heroku app or local development port
 
 const apiBaseUrl =
     process.env.NODE_ENV === 'production'
-        ? 'https://my-meds-list.herokuapp.com'
+        ? 'https://my-med-list-app.herokuapp.com'
         : 'http://localhost:8080';
 
 export default apiBaseUrl;

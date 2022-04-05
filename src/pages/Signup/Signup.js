@@ -42,7 +42,7 @@ const Signup = (routerProps) => {
                 <button type="submit">Signup</button>
             </form>
 
-            <Link to='/signup'>Login</Link>
+            <Link to='/login'>Login</Link>
 
         </div>
     );

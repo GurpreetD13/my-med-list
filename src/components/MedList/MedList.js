@@ -3,13 +3,10 @@ import axios from 'axios';
 import apiBaseUrl from '../../config/config';
 import { Link } from 'react-router-dom';
 import iconDelete from '../../assets/icons/delete_outline-24px.svg';
-import iconEdit from '../../assets/icons/edit-24px.svg';
 
 const MedList = (props) => {
 
     const { userMedList } = props;
-
-    console.log(props.userMedList);
 
     return (
 
@@ -24,7 +21,7 @@ const MedList = (props) => {
                             <p className="item__details-label">DIN</p>
                             <p className="item__detail">{med.din}</p>
 
-                            <p className="item__details-label">MEDICATION NAME</p>
+                            <p className="item__details-label">MEDICATION</p>
                             <p className="item__detail">{med.medication}</p>
 
                             <p className="item__details-label">INSTRUCTIONS</p>
@@ -39,10 +36,7 @@ const MedList = (props) => {
                                 <img src={iconDelete} alt="icon of a trash can" />
                             </Link>
                             {/* We'll have to have our alert/modal for delete pop here */}
-
-
                             <Link to={`/medications/${med.id}/update`}>
-                                <img src={iconEdit} alt="icon of a pencil" />
                             </Link>
 
                         </div>
