@@ -19,10 +19,9 @@ class MedicationForm extends React.Component {
         // create newMedication to send to API server based on user's inputs in form
         // have to change e.target.inputName.value to this.state.inputName
         let newMedication = {
-            din: e.target.din.value,
-            // medication: this.state.medication,
+            din: this.state.din,
             medication: '',
-            instructions: e.target.instructions.value,
+            instructions: this.state.instructions,
         };
         // use din to GET medication active ingredient name + strength + units from API search service
         axios.get(`${apiBaseUrl}/drug-identification-search/${newMedication.din}`)
@@ -49,11 +48,11 @@ class MedicationForm extends React.Component {
     }
 
     // handleChange handler function changes/controls state of stored form input values and is applied to each input field
-    // handleChange = (event) => {
-    //     this.setState({
-    //         [event.target.name]: event.target.value
-    //     });
-    // };
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    };
 
     // handler function to disable form submission if form is invalid (i.e. din not 8 or no proper instructions)
     // isFormValid = () => {
@@ -71,15 +70,15 @@ class MedicationForm extends React.Component {
 
                 <label className='form-detail__label' htmlFor='din'>DIN (8 digits including leading zeros)</label>
                 <input className='form-detail__input' name='din' type="text" placeholder=''
-                // onChange={this.handleChange}
-                // value={this.state.din} 
+                onChange={this.handleChange}
+                value={this.state.din} 
                 />
 
 
                 <label className='form-detail__label' htmlFor='instructions'>How I take it: </label>
                 <input className='form-detail__input' name='instructions' type="text" placeholder=''
-                // onChange={this.handleChange}
-                // value={this.state.instructions} 
+                onChange={this.handleChange}
+                value={this.state.instructions} 
                 />
 
 
