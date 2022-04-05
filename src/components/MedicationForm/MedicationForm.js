@@ -9,7 +9,6 @@ class MedicationForm extends React.Component {
     // initialize state to empty form fields
     state = {
         din: '',
-        medication: '',
         instructions: '',
     };
 
@@ -17,28 +16,41 @@ class MedicationForm extends React.Component {
         e.preventDefault();
         // only if form is valid
         // if (this.isFormValid()) {
-            // create newMedication to send to API server based on user's inputs in form
-            // have to change e.target.inputName.value to this.state.inputName
-            const newMedication = {
-                din: this.state.din,
-                // medication: this.state.medication,
-                instructions: this.state.instructions,
+        // create newMedication to send to API server based on user's inputs in form
+        // have to change e.target.inputName.value to this.state.inputName
+        let newMedication = {
+            din: e.target.din.value,
+            // medication: this.state.medication,
+            medication: '',
+            instructions: e.target.instructions.value,
+        };
+        // use din to GET medication active ingredient name + strength + units from API
+        axios.get(`${apiBaseUrl}/drug-identification-search/${newMedication.din}`)
+            .then(res => {
+                newMedication.medication = res.data;
+                console.log(newMedication)
 
-            };
-            // send newMedication to API server
-            // axios.post(`${apiBaseUrl}/medications`, newMedication)
-            //     .then(res => {
-            //         // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted, have to use this.props since this is a class
-            //         // this.props.routerProps.history.push(`/warehouses/${res.data.id}`);
-            //     })
-            //     .catch(error => console.log(error));
 
-            // reset state to empty form fields after page submission 
-            // this.setState({
-            //     din: '',
-            //     medication: '',
-            //     instructions: '',
-            // });
+            })
+            .catch(error => console.log(error));
+
+
+
+
+        // send newMedication to API server
+        // axios.post(`${apiBaseUrl}/medications`, newMedication)
+        //     .then(res => {
+        //         // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted, have to use this.props since this is a class
+        //         // this.props.routerProps.history.push(`/warehouses/${res.data.id}`);
+        //     })
+        //     .catch(error => console.log(error));
+
+        // reset state to empty form fields after page submission 
+        // this.setState({
+        //     din: '',
+        //     medication: '',
+        //     instructions: '',
+        // });
         // }
     }
 
