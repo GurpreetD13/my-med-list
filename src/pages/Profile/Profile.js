@@ -59,7 +59,7 @@ class Profile extends React.Component {
                     </header>
 
                     <h1>Add a medication</h1>
-                    <MedicationForm userInfo={userInfo} />
+                    <MedicationForm routerProps={this.props} />
 
 
                     <h1>My Med List</h1>

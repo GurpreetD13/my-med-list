@@ -6,7 +6,7 @@ import apiBaseUrl from '../../config/config';
 
 class MedicationForm extends React.Component {
 
-    // initialize state to empty form fields
+    // initialize state to empty form fields (din is drug-identification-number)
     state = {
         din: '',
         instructions: '',
@@ -24,26 +24,20 @@ class MedicationForm extends React.Component {
             medication: '',
             instructions: e.target.instructions.value,
         };
-        // use din to GET medication active ingredient name + strength + units from API
+        // use din to GET medication active ingredient name + strength + units from API search service
         axios.get(`${apiBaseUrl}/drug-identification-search/${newMedication.din}`)
             .then(res => {
                 newMedication.medication = res.data;
-                console.log(newMedication)
-
-
+                // POST/send newMedication to API server
+                return axios.post(`${apiBaseUrl}/medications/`, newMedication,
+                    { headers: { authorization: `Bearer ${sessionStorage.getItem('authToken')}` } })
+            })
+            .then(() => {
+                // this.props.routerProps.history.push(`/`);
+                window.location.reload();
             })
             .catch(error => console.log(error));
 
-
-
-
-        // send newMedication to API server
-        // axios.post(`${apiBaseUrl}/medications`, newMedication)
-        //     .then(res => {
-        //         // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted, have to use this.props since this is a class
-        //         // this.props.routerProps.history.push(`/warehouses/${res.data.id}`);
-        //     })
-        //     .catch(error => console.log(error));
 
         // reset state to empty form fields after page submission 
         // this.setState({

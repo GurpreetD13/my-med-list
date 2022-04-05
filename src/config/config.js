@@ -1,4 +1,4 @@
-// Automatically updates the urls to match deployed heroku app or local development port
+// Configuration to automatically update urls to match deployed heroku app or local development port
 
 const apiBaseUrl =
     process.env.NODE_ENV === 'production'
