@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Getting Started with My Med List API Server and Database
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description 
 
-## Available Scripts
+This is the React client side for My Med List app and should be run along with the server which can be found: 
+https://github.com/GurpreetD13/my-med-list-api 
 
-In the project directory, you can run:
 
-### `npm start`
+My Med List is an app that
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open up the root folder and in the terminal run:
 
-### `npm run eject`
+### 1. `npm install`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Will install all dependencies: react's depedencies and react-router-dom@5.3, sass, axios
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. `npm start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Will start the app, enjoy!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. Signup/Login 
 
-## Learn More
+You may signup to create a new user or you can login as 1 of the sample users on the server-side
+Refer to the server side README.md linked above or for quick reference: 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- username: "User1" password: "sugar"
+- username: "User2" password: "heart"
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 4. Example medication DINs
 
-### Code Splitting
+Because you may not have DINs for actual medications nearby to run the app correctly, 
+below is a few common medications with their DINs that you can use to test to add to a user: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+02172100 levothyroxine 100 mcg for thyroid
+00878928 amlodipine 5 mg for blood pressure
+02246624 perindopril 8 mg for blood pressure
+02099233 metformin 500 mg for diabetes
+02303922 sitagliptin 100 mg for diabetes
+02247162 rosuvastatin 10 mg for cholesterol
+02267233 pantoprazole 40 mg for stomach acid refulx
+02238682 clopidogrel 75 mg blood thinner

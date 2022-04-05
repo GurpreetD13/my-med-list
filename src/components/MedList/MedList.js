@@ -1,12 +1,20 @@
 import './MedList.scss';
 import axios from 'axios';
 import apiBaseUrl from '../../config/config';
-import { Link } from 'react-router-dom';
 import iconDelete from '../../assets/icons/delete_outline-24px.svg';
 
 const MedList = (props) => {
 
     const { userMedList } = props;
+
+    const handleDelete = (id) => {
+        axios.delete(`${apiBaseUrl}/medications/${id}`,
+            { headers: { authorization: `Bearer ${sessionStorage.getItem('authToken')}` } })
+            .then(() => {
+                window.location.reload();
+            })
+            .catch(error => console.log(error));
+    };
 
     return (
 
@@ -31,13 +39,10 @@ const MedList = (props) => {
 
                         <div className='item__container-bottom'>
 
-                            {/* We'll have to link to edit form when completed here */}
-                            <Link to='/inventories'>
+                            <div onClick={() => handleDelete(med.id)}>
                                 <img src={iconDelete} alt="icon of a trash can" />
-                            </Link>
-                            {/* We'll have to have our alert/modal for delete pop here */}
-                            <Link to={`/medications/${med.id}/update`}>
-                            </Link>
+                            </div>
+
 
                         </div>
                     </div>
