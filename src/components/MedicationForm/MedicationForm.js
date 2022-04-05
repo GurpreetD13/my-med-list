@@ -15,36 +15,35 @@ class MedicationForm extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         // only if form is valid
-        // if (this.isFormValid()) {
-        // create newMedication to send to API server based on user's inputs in form
-        // have to change e.target.inputName.value to this.state.inputName
-        let newMedication = {
-            din: this.state.din,
-            medication: '',
-            instructions: this.state.instructions,
-        };
-        // use din to GET medication active ingredient name + strength + units from API search service
-        axios.get(`${apiBaseUrl}/drug-identification-search/${newMedication.din}`)
-            .then(res => {
-                newMedication.medication = res.data;
-                // POST/send newMedication to API server
-                return axios.post(`${apiBaseUrl}/medications/`, newMedication,
-                    { headers: { authorization: `Bearer ${sessionStorage.getItem('authToken')}` } })
-            })
-            .then(() => {
-                // this.props.routerProps.history.push(`/`);
-                window.location.reload();
-            })
-            .catch(error => console.log(error));
+        if (this.isFormValid()) {
+            // create newMedication to send to API server database based on user's inputs in form
+            // have to change e.target.inputName.value to this.state.inputName
+            let newMedication = {
+                din: this.state.din,
+                medication: '',
+                instructions: this.state.instructions,
+            };
+            // use din to GET medication active ingredient name + strength + units from API search service
+            axios.get(`${apiBaseUrl}/drug-identification-search/${newMedication.din}`)
+                .then(res => {
+                    newMedication.medication = res.data;
+                    // POST/send newMedication to API database
+                    return axios.post(`${apiBaseUrl}/medications/`, newMedication,
+                        { headers: { authorization: `Bearer ${sessionStorage.getItem('authToken')}` } })
+                })
+                .then(() => {
+                    // this.props.routerProps.history.push(`/`);
+                    window.location.reload();
+                })
+                .catch(error => console.log(error));
 
-
-        // reset state to empty form fields after page submission 
-        // this.setState({
-        //     din: '',
-        //     medication: '',
-        //     instructions: '',
-        // });
-        // }
+            // reset state to empty form fields after form submission 
+            this.setState({
+                din: '',
+                medication: '',
+                instructions: '',
+            });
+        }
     }
 
     // handleChange handler function changes/controls state of stored form input values and is applied to each input field
@@ -54,13 +53,13 @@ class MedicationForm extends React.Component {
         });
     };
 
-    // handler function to disable form submission if form is invalid (i.e. din not 8 or no proper instructions)
-    // isFormValid = () => {
-    //     if (this.state.din.length() !== 8 || this.state.instructions.length() < 8) {
-    //         return false;
-    //     }
-    //     return true;
-    // };
+    // handler function to disable form submission if form is invalid (i.e. din not 8 digits or insufficient instructions)
+    isFormValid = () => {
+        if (this.state.din.length !== 8 || this.state.instructions.length < 8) {
+            return false;
+        }
+        return true;
+    };
 
 
     render() {
@@ -70,15 +69,15 @@ class MedicationForm extends React.Component {
 
                 <label className='form-detail__label' htmlFor='din'>DIN (8 digits including leading zeros)</label>
                 <input className='form-detail__input' name='din' type="text" placeholder=''
-                onChange={this.handleChange}
-                value={this.state.din} 
+                    onChange={this.handleChange}
+                    value={this.state.din}
                 />
 
 
                 <label className='form-detail__label' htmlFor='instructions'>How I take it: </label>
                 <input className='form-detail__input' name='instructions' type="text" placeholder=''
-                onChange={this.handleChange}
-                value={this.state.instructions} 
+                    onChange={this.handleChange}
+                    value={this.state.instructions}
                 />
 
 
