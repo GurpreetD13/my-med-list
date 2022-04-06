@@ -27,7 +27,7 @@ const Login = (routerProps) => {
 
         <div className='login'>
 
-            <h1>Login</h1>
+            <h2 className='login__title'>Login</h2>
 
             <form onSubmit={handleLogin}>
 
@@ -40,7 +40,7 @@ const Login = (routerProps) => {
                 <button type="submit">Login</button>
             </form>
 
-            <Link to='/signup'>Signup</Link>
+            <Link to='/signup' className='login__signup-link'>or Signup</Link>
 
         </div>
     );

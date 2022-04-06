@@ -1,0 +1,15 @@
+@use '../../styles/partials/mixins'as *;
+@use '../../styles/partials/typography'as *;
+@use '../../styles/partials/colors'as *;
+
+
+
+.login {
+    &__title {
+        @include font-header-page
+    }
+
+    &__signup-link {
+        @include font-body;
+    }
+}

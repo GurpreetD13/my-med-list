@@ -22,22 +22,22 @@ const MedList = (props) => {
 
             {userMedList.map(med => {
                 return (
-                    <div key={med.id} className='item'>
+                    <div key={med.id} className='medication'>
 
-                        <div className='item__container-top'>
+                        <div className='medication__container-top'>
 
-                            <p className="item__details-label">DIN</p>
-                            <p className="item__detail">{med.din}</p>
+                            <p className="medication__details-label">DIN</p>
+                            <p className="medication__detail">{med.din}</p>
 
-                            <p className="item__details-label">MEDICATION</p>
-                            <p className="item__detail">{med.medication}</p>
+                            <p className="medication__details-label">MEDICATION</p>
+                            <p className="medication__detail">{med.medication}</p>
 
-                            <p className="item__details-label">INSTRUCTIONS</p>
-                            <p className="item__detail">{med.instructions}</p>
+                            <p className="medication__details-label">INSTRUCTIONS</p>
+                            <p className="medication__detail">{med.instructions}</p>
 
                         </div>
 
-                        <div className='item__container-bottom'>
+                        <div className='medication__container-bottom'>
 
                             <div onClick={() => handleDelete(med.id)}>
                                 <img src={iconDelete} alt="icon of a trash can" />
