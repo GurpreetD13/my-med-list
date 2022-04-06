@@ -1,18 +1,28 @@
-# Getting Started with My Med List API Server and Database
+# Getting Started with My Med List app
 
 ## Description 
 
 This is the React client side for My Med List app and should be run along with the server which can be found: 
 https://github.com/GurpreetD13/my-med-list-api 
 
+The problem: People often have a hard time remembering the medications they take. 
 
-My Med List is an app that
+The solution: My Med List! 
 
+A web application that helps people easily manage their list of medications anywhere, anytime!
 
+Features: Auth on both front and back-ends, a database, controlled react form and an...
 
+Integrated API: Health Canada drug products database.
 
+DIN: 8 digit Drug Identification Number found on every medication bottle in Canada.
 
-
+The Front-end stack!
+- React app
+- React-Router-DOM
+- Auth: JWT
+- Axios
+- Sass
 
 ## Installation
 
@@ -20,7 +30,7 @@ Open up the root folder and in the terminal run:
 
 ### 1. `npm install`
 
-Will install all dependencies: react's depedencies and react-router-dom@5.3, sass, axios
+Will install all dependencies: react's depedencies and react-router-dom@5.3, sass, axios.
 
 ### 2. `npm start`
 
