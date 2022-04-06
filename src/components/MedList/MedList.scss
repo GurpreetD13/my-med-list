@@ -1,0 +1,23 @@
+@use '../../styles/partials/mixins'as *;
+@use '../../styles/partials/typography'as *;
+@use '../../styles/partials/colors'as *;
+
+
+
+.medication {
+    border-bottom: 1px solid $color-secondary-darkblue;
+
+    &__detail {
+        @include font-subheader;
+    }
+
+    &__details-label {
+        @include font-body;
+        color: $color-primary-silver;
+    }
+
+    &__delete-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

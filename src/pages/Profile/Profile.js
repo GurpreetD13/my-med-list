@@ -62,7 +62,6 @@ class Profile extends React.Component {
                 {/* Pass user's med list to MedList component as a prop */}
                 {userMedList && <MedList userMedList={userMedList} />}
             </>
-
         );
     }
 };
