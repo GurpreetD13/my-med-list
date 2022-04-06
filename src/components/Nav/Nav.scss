@@ -1,0 +1,19 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/colors' as *;
+
+.nav {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px;
+
+    @include font-subheader;
+    border-bottom: 1px solid $color-secondary-mercury;
+
+    &__logo{
+        display: flex;
+    }
+}
