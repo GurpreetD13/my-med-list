@@ -2,9 +2,9 @@ import './Profile.scss';
 import React from 'react';
 import axios from 'axios';
 import apiBaseUrl from '../../config/config';
-import { Link } from 'react-router-dom';
 import MedList from '../../components/MedList/MedList'
 import MedicationForm from '../../components/MedicationForm/MedicationForm';
+
 
 
 class Profile extends React.Component {
@@ -48,27 +48,21 @@ class Profile extends React.Component {
 
         return (isLoading ? <h1>Loading</h1> :
 
-            <main className='main'>
-                <div className='main__container'>
+            <>
+                <header className='header'>
+                    <h1 className="header__title">Welcome {userInfo.name}</h1>
+                </header>
 
-                    <header className='header'>
-                        <h1 className="header__title">Welcome {userInfo.name}</h1>
-                        {/* <Link to='/medications/add'>
-                            <button className='header__add-button'>+ Add medication</button>
-                        </Link> */}
-                    </header>
-
-                    <h1>Add a medication</h1>
-                    <MedicationForm routerProps={this.props} />
+                <h2 className='section__title'>Add a medication</h2>
+                <MedicationForm routerProps={this.props} />
 
 
-                    <h1>My Med List</h1>
+                <h2 className='section__title'>My Med List</h2>
 
-                    {/* Pass user's med list to MedList component as a prop */}
-                    {userMedList && <MedList userMedList={userMedList} />}
+                {/* Pass user's med list to MedList component as a prop */}
+                {userMedList && <MedList userMedList={userMedList} />}
+            </>
 
-                </div>
-            </main>
         );
     }
 };

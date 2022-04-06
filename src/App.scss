@@ -62,7 +62,8 @@ textarea {
     color: $color-primary-black;
     min-height: 36px;
     min-width: 240px;
-    max-width: 100%;
+    width: 240px;
+    // max-width: 100%;
     border-radius: 4px;
     border: 1px solid $color-secondary-mercury;
     background-color: $color-secondary-alabaster;
@@ -96,4 +97,33 @@ label {
     color: $color-primary-silver;
     @include font-labels-buttons;
     padding-bottom: 4px;
+    width: 100%
+}
+
+
+// ************************************************
+
+.main {
+    box-sizing: border-box;
+    width: 100%;
+    // margin: auto;
+    // width: 320px;
+    padding: 1rem;
+
+    // @include tablet {
+    //     padding: 0 10%;
+    // }
+
+    // @include desktop {
+    //     padding: 0 15%;
+    // }
+
+    &__container {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 1rem;
+
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        border-radius: 3px;
+    }
 }

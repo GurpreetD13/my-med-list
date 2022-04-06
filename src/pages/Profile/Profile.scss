@@ -1,0 +1,20 @@
+@use '../../styles/partials/mixins'as *;
+@use '../../styles/partials/typography'as *;
+@use '../../styles/partials/colors'as *;
+
+
+
+.header {
+    display: flex;
+    justify-content: space-evenly;
+
+    &__title {
+        @include font-subheader;
+    }
+}
+
+.section__title {
+    display: flex;
+    justify-content: space-evenly;
+    @include font-header-page;
+}

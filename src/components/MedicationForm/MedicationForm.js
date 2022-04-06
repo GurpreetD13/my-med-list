@@ -4,6 +4,7 @@ import axios from 'axios';
 import apiBaseUrl from '../../config/config';
 
 
+
 class MedicationForm extends React.Component {
 
     // initialize state to empty form fields (din is drug-identification-number)
@@ -70,19 +71,15 @@ class MedicationForm extends React.Component {
                 <label className='form-detail__label' htmlFor='din'>DIN (8 digits including leading zeros)</label>
                 <input className='form-detail__input' name='din' type="text" placeholder=''
                     onChange={this.handleChange}
-                    value={this.state.din}
-                />
+                    value={this.state.din}/>
 
 
                 <label className='form-detail__label' htmlFor='instructions'>How I take it: </label>
                 <input className='form-detail__input' name='instructions' type="text" placeholder=''
                     onChange={this.handleChange}
-                    value={this.state.instructions}
-                />
-
+                    value={this.state.instructions}/>
 
                 <button type="submit" className='form__button form__button--submit' >+ Add Medication</button>
-
 
             </form>
         );

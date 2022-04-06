@@ -11,11 +11,16 @@ const App = () => {
     return (
         <BrowserRouter >
             <Nav />
-            <Switch>
-                <Route path='/' exact component={Profile} />
-                <Route path='/login' component={Login} />
-                <Route path='/signup' component={Signup} />
-            </Switch>
+            <main className='main'>
+                <div className='main__container'>
+                    <Switch >
+                        <Route path='/' exact component={Profile} />
+                        <Route path='/login' component={Login} />
+                        <Route path='/signup' component={Signup} />
+                    </Switch>
+                </div>
+            </main>
+
         </BrowserRouter>
     );
 }
