@@ -49,11 +49,11 @@ Refer to the server side README.md linked above or for quick reference:
 Because you may not have DINs for actual medications nearby to run the app correctly, 
 below is a few common medications with their DINs that you can use to test to add to a user: 
 
-02172100 levothyroxine 100 mcg for thyroid
-00878928 amlodipine 5 mg for blood pressure
-02246624 perindopril 8 mg for blood pressure
-02099233 metformin 500 mg for diabetes
-02303922 sitagliptin 100 mg for diabetes
-02247162 rosuvastatin 10 mg for cholesterol
-02267233 pantoprazole 40 mg for stomach acid refulx
-02238682 clopidogrel 75 mg blood thinner
+- 02172100 levothyroxine 100 mcg for thyroid
+- 00878928 amlodipine 5 mg for blood pressure
+- 02246624 perindopril 8 mg for blood pressure
+- 02099233 metformin 500 mg for diabetes
+- 02303922 sitagliptin 100 mg for diabetes
+- 02247162 rosuvastatin 10 mg for cholesterol
+- 02267233 pantoprazole 40 mg for stomach acid refulx
+- 02238682 clopidogrel 75 mg blood thinner
