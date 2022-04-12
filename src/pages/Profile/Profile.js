@@ -35,11 +35,24 @@ class Profile extends React.Component {
                         { headers: { authorization: `Bearer ${token}` } })
                 })
                 .then(res => {
-
-                    this.setState({ userMedList: res.data })
+                    this.setState({ userMedList: res.data.sort((a, b) => b.id - a.id) })
                 })
                 .catch(err => console.log(err));
         }
+    };
+
+    handleAddMed = (newMed) => {
+        
+        let updatedMedList = [...this.state.userMedList].unshift(newMed);
+
+        this.setState({ userMedList: updatedMedList });
+    };
+
+    handleRemoveMed = (removedMedId) => {
+        
+        let updatedMedList = [...this.state.userMedList].filter(med => med.id !== Number(removedMedId));
+
+        this.setState({ userMedList: updatedMedList });
     };
 
 
@@ -54,13 +67,13 @@ class Profile extends React.Component {
                 </header>
 
                 <h2 className='section__title'>Add a medication</h2>
-                <MedicationForm routerProps={this.props} />
+                <MedicationForm handleAddMed={this.handleAddMed} />
 
 
                 <h2 className='section__title'>My Med List</h2>
 
                 {/* Pass user's med list to MedList component as a prop */}
-                {userMedList && <MedList userMedList={userMedList} />}
+                {userMedList && <MedList userMedList={userMedList} handleRemoveMed={this.handleRemoveMed}/>}
             </>
         );
     }

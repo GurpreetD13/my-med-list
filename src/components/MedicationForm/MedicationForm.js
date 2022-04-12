@@ -32,9 +32,8 @@ class MedicationForm extends React.Component {
                     return axios.post(`${apiBaseUrl}/medications/`, newMedication,
                         { headers: { authorization: `Bearer ${sessionStorage.getItem('authToken')}` } })
                 })
-                .then(() => {
-                    // this.props.routerProps.history.push(`/`);
-                    window.location.reload();
+                .then((res) => {
+                    this.props.handleAddMed(res.data.newMed);
                 })
                 .catch(error => console.log(error));
 

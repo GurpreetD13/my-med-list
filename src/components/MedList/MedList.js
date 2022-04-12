@@ -7,13 +7,13 @@ import iconDelete from '../../assets/icons/delete_outline-24px.svg';
 
 const MedList = (props) => {
 
-    const { userMedList } = props;
+    const { userMedList, handleRemoveMed } = props;
 
     const handleDelete = (id) => {
         axios.delete(`${apiBaseUrl}/medications/${id}`,
             { headers: { authorization: `Bearer ${sessionStorage.getItem('authToken')}` } })
-            .then(() => {
-                window.location.reload();
+            .then((res) => {
+                handleRemoveMed(res.data.id);
             })
             .catch(error => console.log(error));
     };
