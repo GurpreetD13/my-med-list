@@ -42,8 +42,9 @@ class Profile extends React.Component {
     };
 
     handleAddMed = (newMed) => {
-        
-        let updatedMedList = [...this.state.userMedList].unshift(newMed);
+
+        let updatedMedList = [...this.state.userMedList];
+        updatedMedList.unshift(newMed);
 
         this.setState({ userMedList: updatedMedList });
     };
